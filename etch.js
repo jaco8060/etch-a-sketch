@@ -47,5 +47,6 @@ slider.oninput = function () {
 slider.addEventListener("mouseup", printValue);
 
 function printValue(e) {
-  console.log(e.target.value);
+  const squareContainer = document.querySelector(".container");
+  squareContainer.innerHTML = "";
 }
