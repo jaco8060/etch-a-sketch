@@ -44,9 +44,19 @@ slider.oninput = function () {
   output.innerHTML = `${slider.value}x${slider.value}`;
 };
 
-slider.addEventListener("mouseup", printValue);
+slider.addEventListener("mouseup", changeContainer);
 
-function printValue(e) {
+function changeContainer(e) {
   const squareContainer = document.querySelector(".container");
   squareContainer.innerHTML = "";
+  console.log(squareContainer);
+  for (let i = 0; i < e.target.value; i++) {
+    for (let j = 0; j < e.target.value; j++) {
+      const div = document.createElement("div");
+      div.classList.add("square");
+      squareContainer.appendChild(div);
+    }
+  }
+  squareContainer.style.gridTemplateColumns = `repeat(${e.target.value}, 1fr)`;
+  squareContainer.style.gridTemplateRows = `repeat(${e.target.value}, 1fr)`;
 }
