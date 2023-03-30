@@ -10,8 +10,8 @@ slider.addEventListener("mouseup", changeContainer);
 
 function changeContainer(e) {
   const squareContainer = document.querySelector(".container");
-  squareContainer.innerHTML = "";
-  console.log(squareContainer);
+  squareContainer.innerHTML = ""; //reset container
+
   for (let i = 0; i < e.target.value; i++) {
     for (let j = 0; j < e.target.value; j++) {
       const div = document.createElement("div");
@@ -31,6 +31,8 @@ function changeContainer(e) {
 
     square.addEventListener("mousemove", onMouseMove);
   });
+  const resetBtn = document.querySelector(".resetBtn");
+  resetBtn.addEventListener("click", resetSquares);
 }
 function changeColour(e) {
   e.target.style.backgroundColor = "blue";
@@ -62,7 +64,9 @@ squares.forEach((square) => {
 });
 
 function resetSquares(e) {
-  squares.forEach((square) => {
+  const squaresReset = document.querySelectorAll(".square");
+
+  squaresReset.forEach((square) => {
     square.style.backgroundColor = "white";
   });
 }
