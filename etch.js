@@ -1,12 +1,30 @@
 function changeColour(e) {
   e.target.style.backgroundColor = "blue";
-  //   console.log(e.target);
 }
+
+function onMouseDown() {
+  isMouseDown = true;
+}
+
+function onMouseUp() {
+  isMouseDown = false;
+}
+
+function onMouseMove(event) {
+  if (isMouseDown) {
+    changeColour(event);
+  }
+}
+
 const squares = document.querySelectorAll(".square");
+let isMouseDown = false;
 
 squares.forEach((square) => {
-  square.draggable = false;
-  square.addEventListener("mouseover", changeColour);
+  square.addEventListener("mousedown", onMouseDown);
+
+  square.addEventListener("mouseup", onMouseUp);
+
+  square.addEventListener("mousemove", onMouseMove);
 });
 
 // buttons.forEach((button) => {
