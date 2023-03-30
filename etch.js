@@ -35,7 +35,8 @@ function changeContainer(e) {
   resetBtn.addEventListener("click", resetSquares);
 }
 function changeColour(e) {
-  e.target.style.backgroundColor = "blue";
+  const colourPicker = document.querySelector(".colour-picker");
+  e.target.style.backgroundColor = colourPicker.value;
 }
 
 function onMouseDown() {
@@ -51,7 +52,7 @@ function onMouseMove(e) {
     changeColour(e);
   }
 }
-//by default
+//default divs
 const squares = document.querySelectorAll(".square");
 let isMouseDown = false;
 
@@ -71,5 +72,6 @@ function resetSquares(e) {
   });
 }
 
+//default divs
 const resetBtn = document.querySelector(".resetBtn");
 resetBtn.addEventListener("click", resetSquares);
