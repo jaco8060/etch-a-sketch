@@ -35,3 +35,17 @@ function resetSquares(e) {
 
 const resetBtn = document.querySelector(".resetBtn");
 resetBtn.addEventListener("click", resetSquares);
+
+const slider = document.getElementById("myRange");
+const output = document.getElementById("slider-value");
+output.innerHTML = `${slider.value}x${slider.value}`;
+
+slider.oninput = function () {
+  output.innerHTML = `${slider.value}x${slider.value}`;
+};
+
+slider.addEventListener("mouseup", printValue);
+
+function printValue(e) {
+  console.log(e.target.value);
+}
