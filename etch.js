@@ -10,9 +10,9 @@ function onMouseUp() {
   isMouseDown = false;
 }
 
-function onMouseMove(event) {
+function onMouseMove(e) {
   if (isMouseDown) {
-    changeColour(event);
+    changeColour(e);
   }
 }
 
@@ -27,18 +27,11 @@ squares.forEach((square) => {
   square.addEventListener("mousemove", onMouseMove);
 });
 
-// buttons.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     alert(button.id);
-//   });
-// });
-
 function resetSquares(e) {
   squares.forEach((square) => {
-    square.style.backgroundColor = "bisque";
+    square.style.backgroundColor = "white";
   });
 }
 
 const resetBtn = document.querySelector(".resetBtn");
-
 resetBtn.addEventListener("click", resetSquares);

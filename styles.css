@@ -1,5 +1,7 @@
 .container{
     display: grid;
+    justify-self: center;
+    align-self: center;
     width: 960px;
     height: 960px;
     grid-template-columns: repeat(4,1fr);
@@ -8,7 +10,7 @@
 }
 
 .square {
-    background-color: bisque;
+    background-color: white;
     border: solid black;
 }
 
@@ -19,6 +21,18 @@ body {
     
 }
 .resetBtn {
-    justify-content: center;
-    align-self: center;
+    background-color: #3882f6;
+    width: 120px;
+    color: #f9faf8;
+    border-radius: 8px;
+    border-width: 0;
+    padding: 6px;
+    font-size: 20px;
+    margin: auto;
+    font-weight: 700;
+    border: solid black;
+}
+.resetBtn:hover {
+    background-color: white;
+    color: #3882f6;
 }
